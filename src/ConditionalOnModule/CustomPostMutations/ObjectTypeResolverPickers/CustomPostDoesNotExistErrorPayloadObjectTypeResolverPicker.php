@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PoPCMSSchema\MediaMutations\ObjectTypeResolverPickers;
+namespace PoPCMSSchema\MediaMutations\ConditionalOnModule\CustomPostMutations\ObjectTypeResolverPickers;
 
+use PoPCMSSchema\CustomPostMutations\ObjectTypeResolverPickers\AbstractCustomPostDoesNotExistErrorPayloadObjectTypeResolverPicker;
 use PoPCMSSchema\MediaMutations\TypeResolvers\UnionType\AbstractCreateMediaItemMutationErrorPayloadUnionTypeResolver;
-use PoPCMSSchema\MediaMutations\TypeResolvers\UnionType\AbstractUpdateMediaItemMutationErrorPayloadUnionTypeResolver;
 use PoP\ComponentModel\TypeResolvers\UnionType\UnionTypeResolverInterface;
 
-class UserDoesNotExistMutationErrorPayloadObjectTypeResolverPicker extends AbstractUserDoesNotExistMutationErrorPayloadObjectTypeResolverPicker
+class CustomPostDoesNotExistErrorPayloadObjectTypeResolverPicker extends AbstractCustomPostDoesNotExistErrorPayloadObjectTypeResolverPicker
 {
     /**
      * @return array<class-string<UnionTypeResolverInterface>>
@@ -17,7 +17,6 @@ class UserDoesNotExistMutationErrorPayloadObjectTypeResolverPicker extends Abstr
     {
         return [
             AbstractCreateMediaItemMutationErrorPayloadUnionTypeResolver::class,
-            AbstractUpdateMediaItemMutationErrorPayloadUnionTypeResolver::class,
         ];
     }
 }
